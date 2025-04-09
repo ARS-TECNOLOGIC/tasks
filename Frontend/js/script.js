@@ -2,6 +2,7 @@ const tbody = document.querySelector('tbody');
 const addForm = document.querySelector('.add-form');
 const inputAddTask = document.querySelector('.inputAddTask');
 const backendApi = "https://tasks-theta.vercel.app"
+
 const addTask = async (event) => {
     event.preventDefault();
     const titleTask = inputAddTask.value;
@@ -19,7 +20,7 @@ const addTask = async (event) => {
 
 const deleteTask = async (idTask) => {
     console.log('Delete foi acionado: ' + idTask);
-    await fetch(`http://localhost:3333/tasks/${idTask}`, {
+    await fetch(`${backendApi}/tasks/${idTask}`, {
         method: 'DELETE'
     });
     loadTasks();
@@ -39,7 +40,7 @@ const updateTask = async ({ id, status, title }) => {
 }
 
 const fetchTasks = async () => {
-    const response = await fetch('http://localhost:3333/tasks');
+    const response = await fetch(`${backendApi}/tasks`);
     const tasks = await response.json();
     return tasks;
 }
