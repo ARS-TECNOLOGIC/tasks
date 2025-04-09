@@ -1,6 +1,6 @@
 const cards = document.querySelectorAll('.card')
 const columns = document.querySelectorAll('.column')
-
+const apiBackend = "https://tasks-egoe.vercel.app/"
 
 const dragStart = (event) => {
     event.dataTransfer.effectAllowed="move";
@@ -38,7 +38,7 @@ columns.forEach((column) => {
 
 
 const listTasks = async ()=>{
-   const response= await fetch('http://10.10.10.35:3333/tasks');
+   const response= await fetch(`${backendApi}/tasks`);
    const tasks = await response.json();
    return tasks;
 }
