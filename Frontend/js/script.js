@@ -28,7 +28,7 @@ const deleteTask = async (idTask) => {
 
 const updateTask = async ({ id, status, title }) => {
     console.log(`Teste do edit: ${id}, ${title}, ${status}`);
-    await fetch(`http://localhost:3333/tasks/${id}`, {
+    await fetch(`${backendApi}/tasks/${id}`, {
         method: 'put',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
