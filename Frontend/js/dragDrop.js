@@ -1,6 +1,6 @@
 const cards = document.querySelectorAll('.card')
 const columns = document.querySelectorAll('.column')
-const apiBackend = "https://tasks-egoe.vercel.app/"
+const backendApi = "https://tasks-egoe.vercel.app/"
 
 const dragStart = (event) => {
     event.dataTransfer.effectAllowed="move";
