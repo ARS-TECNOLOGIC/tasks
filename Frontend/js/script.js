@@ -1,12 +1,12 @@
 const tbody = document.querySelector('tbody');
 const addForm = document.querySelector('.add-form');
 const inputAddTask = document.querySelector('.inputAddTask');
-
+const backendApi = "https://tasks-theta.vercel.app"
 const addTask = async (event) => {
     event.preventDefault();
     const titleTask = inputAddTask.value;
 
-    await fetch('http://localhost:3333/tasks', {
+    await fetch(`${backendApi}/tasks`, {
         method: 'POST',
         headers: { 'Content-type': 'application/json' },
         body: JSON.stringify({
