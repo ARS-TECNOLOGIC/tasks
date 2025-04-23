@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/dragDrop.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <title>Document</title>
 </head>
+
 <body>
     <div class="main">
-        <div class="column pendente" id="col1"><header>
-            PENDENTE
-        </header>
-     
-    </div>
-        <div class="column andamento" id="col2">
-            <header>
+
+        <div class="col">
+            <header class="pendente">
+                PENDENTE
+            </header>
+            <div class="column pendente" id="col1">
+
+            </div>
+        </div>
+        <div class="col">
+            <header class="andamento">
                 EM ANDAMENTO
             </header>
+            <div class="column andamento" id="col1">
+
+            </div>
+        </div><div class="col">
+            <header class="concluida">
+                CONCLUIDA
+            </header>
+            <div class="column concluida" id="col1">
+
+            </div>
         </div>
-        <div class="column concluida" id="col3"><header>
-            CONCLUIDA
-        </header></div>
-    </div>
-    <script src="./js/dragDrop.js"></script>
+    <script type="module" src="./js/dragDrop.js"></script>
 </body>
+
 </html>

@@ -99,7 +99,6 @@ header{
   }
 
   
-
-#col1 header{ background-color:#F9E79F;}
-#col2 header{background-color: #AED6F1;}
-#col3 header{background-color: #A9DFBF;}
+ header.pendente{ background-color:#F9E79F;}
+ header.andamento{background-color: #AED6F1;}
+header.concluida{background-color: #A9DFBF;}

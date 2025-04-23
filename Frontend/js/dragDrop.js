@@ -1,3 +1,16 @@
+const updateTask = async ({ id, status, title }) => {
+    console.log(`Teste do edit: ${id}, ${title}, ${status}`);
+    await fetch(`${backendApi}/tasks/${id}`, {
+        method: 'put',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+            title,
+            status
+        })
+    })
+    ListCard();
+}
+
 const cards = document.querySelectorAll('.card')
 const columns = document.querySelectorAll('.column')
 const backendApi = "https://tasks-theta.vercel.app"
@@ -25,6 +38,11 @@ const drop = (event) => {
        event.target.classList.remove('column--enter');
        const classDrop = event.target.classList[1];
        card.classList.add(classDrop);
+       updateTask({
+           id: card.id.split("-")[1],
+           status: classDrop,
+           title: card.querySelector("h2").innerText
+       });
    }
 }
 
@@ -53,6 +71,11 @@ const createdElement = (tag)=>{
 
 const ListCard = async ()=>{
     const tasks =await listTasks();
+    const columns = document.querySelectorAll(`.column`);
+    columns.forEach((column)=>{
+        column.innerHTML="";
+    });
+
     tasks.forEach((task)=>{
         const {id, title, status, created_at} = task;
         
