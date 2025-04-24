@@ -1,3 +1,9 @@
+:root{
+    --color-pendente:#ffa500;
+    --color-andamento: #1e90ff;
+    --color-concluida: #32cd32;
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -30,12 +36,12 @@ body{
 }
 header{
     width:100%;
-    background-color: #d1d1d1;
+    background-color: #fff;
     min-height:2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    color:#555;
+    color:#ffffff;
     font-family: "Comfortaa", sans-serif;
     font-optical-sizing: auto;
     font-weight:bold;
@@ -56,7 +62,7 @@ header{
     width: 260px;
     height: 120px;
     margin: 5px auto;
-    border-left: 5px solid #F9E79F; /* cor padrão: pendente */
+    border-left: 5px solid var(--color-pendente); /* cor padrão: pendente */
     justify-content:space-around;
   }
   .card h2 {
@@ -67,11 +73,11 @@ header{
     display: block;
   }
   .card.concluida {
-    border-left-color: #A9DFBF;
+    border-left-color: var(--color-concluida);
   }
 
   .card.andamento {
-    border-left-color: #AED6F1;
+    border-left-color: var(--color-andamento);
   }
 
 .status {
@@ -81,13 +87,13 @@ header{
     font-size: 0.7em;
     font-weight: bold;
     color: #555;
-    background-color: #F9E79F; /* cor padrão: pendente */
+    background-color: var(--color-pendente); /* cor padrão: pendente */
   }
   .card.andamento>.status{
-      background-color: #AED6F1;
+      background-color: var(--color-andamento);
     }
   .card.concluida>.status{
-    background-color: #A9DFBF;
+    background-color: var(--color-concluida);
   }
 .created-at {
     font-size: 0.8em;
@@ -99,6 +105,6 @@ header{
   }
 
   
- header.pendente{ background-color:#F9E79F;}
- header.andamento{background-color: #AED6F1;}
-header.concluida{background-color: #A9DFBF;}
+ header.pendente{ background-color: var(--color-pendente);}
+ header.andamento{background-color: var(--color-andamento);}
+header.concluida{background-color: var(--color-concluida);}
