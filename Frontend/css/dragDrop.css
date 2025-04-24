@@ -15,7 +15,7 @@ body{
 }
 
 .main{
-    gap:1px;
+    gap:0px;
     margin:15px auto;
     display: flex;
     justify-content: center;
@@ -48,9 +48,22 @@ header{
     font-style: normal;
     position: sticky;
     top:0px;
-    margin-bottom: 12px;
-
+    margin-bottom:0px;
 }
+header:not(.pendente)::before{
+    position: absolute;
+    left:0;
+    content: '';
+    border-bottom: 15px solid transparent;
+    border-top:15px solid transparent; 
+    border-left: 20px solid var(--color-concluida);
+  }
+  header.andamento::before{
+    border-left: 20px solid var(--color-pendente);
+  }
+  header.concluida::before{
+    border-left: 20px solid var(--color-andamento);
+  }
 
 .card {
     display: flex;
