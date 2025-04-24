@@ -68,7 +68,7 @@ header{
   .card h2 {
     margin-top: 0;
     font-size: 0.9em;
-    color: #333;
+    color: #555;
     font-family: Arial, sans-serif;
     display: block;
   }
@@ -86,7 +86,7 @@ header{
     border-radius: 20px;
     font-size: 0.7em;
     font-weight: bold;
-    color: #555;
+    color: #fff;
     background-color: var(--color-pendente); /* cor padrão: pendente */
   }
   .card.andamento>.status{
