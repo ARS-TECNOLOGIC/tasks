@@ -54,15 +54,15 @@ header:not(.pendente)::before{
     position: absolute;
     left:0;
     content: '';
-    border-bottom: 15px solid transparent;
-    border-top:15px solid transparent; 
-    border-left: 20px solid var(--color-concluida);
+    border-bottom: 1rem solid transparent;
+    border-top: 1rem solid transparent; 
+    border-left: 18px solid var(--color-concluida);
   }
   header.andamento::before{
-    border-left: 20px solid var(--color-pendente);
+    border-left: 18px solid var(--color-pendente);
   }
   header.concluida::before{
-    border-left: 20px solid var(--color-andamento);
+    border-left: 18px solid var(--color-andamento);
   }
 
 .card {
@@ -78,12 +78,25 @@ header:not(.pendente)::before{
     border-left: 5px solid var(--color-pendente); /* cor padrão: pendente */
     justify-content:space-around;
   }
-  .card h2 {
+  .divTitulo{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap:5px;
+    border-bottom: #c3c3c3 solid 0.2px;
+  }
+.titulo-texto {
+    gap:5px;
+    display: flex;
+    align-items: center;
     margin-top: 0;
     font-size: 0.9em;
     color: #555;
-    font-family: Arial, sans-serif;
-    display: block;
+    font-weight: bold;
+    line-height: 1rem;
+  }
+.icon{
+    color:#b4c2cf
   }
   .card.concluida {
     border-left-color: var(--color-concluida);
@@ -121,3 +134,7 @@ header:not(.pendente)::before{
  header.pendente{ background-color: var(--color-pendente);}
  header.andamento{background-color: var(--color-andamento);}
 header.concluida{background-color: var(--color-concluida);}
+
+a{
+  text-decoration: none;
+}

@@ -42,7 +42,7 @@ const drop = (event) => {
        updateTask({
            id: card.id.split("-")[1],
            status: upDateStatus,
-           title: card.querySelector("h2").innerText
+           title: card.querySelector(".titulo-texto").innerText
        });
    }
 }
@@ -88,9 +88,21 @@ const ListCard = async ()=>{
         card.classList.add("card");
         card.classList.add(classStatus);
 
-        const titulo = createdElement("h2");
-        titulo.innerText =title;
-        card.appendChild(titulo);
+        const divTitulo = createdElement("div");
+        divTitulo.classList.add("divTitulo");
+        
+        const spanIconList = createdElement("span");
+        spanIconList.innerHTML = `<span class="material-symbols-outlined"> list_alt </span>`;
+        spanIconList.classList.add("icon");
+        
+        const spanTitulo = createdElement("span");
+        spanTitulo.innerText = title;
+        spanTitulo.classList.add("titulo-texto");
+
+        divTitulo.appendChild(spanIconList);
+        divTitulo.appendChild(spanTitulo);
+
+        card.appendChild(divTitulo);
         
         const spanStatus = createdElement("span");
         spanStatus.classList.add("status");
