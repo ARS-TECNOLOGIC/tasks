@@ -37,10 +37,11 @@ const drop = (event) => {
        event.target.appendChild(card);
        event.target.classList.remove('column--enter');
        const classDrop = event.target.classList[1];
+       const upDateStatus = (classDrop === "andamento") ? "em andamento" : classDrop;
        card.classList.add(classDrop);
        updateTask({
            id: card.id.split("-")[1],
-           status: classDrop,
+           status: upDateStatus,
            title: card.querySelector("h2").innerText
        });
    }
